@@ -28,7 +28,9 @@ var app = builder.Build();
 //app.UseAuthorization();
 
 //app.MapControllers();
-startup.Configure(app, app.Environment);
+var servicioLogger = (ILogger<Startup>)app.Services.GetService(typeof(ILogger<Startup>));
+
+startup.Configure(app, app.Environment, servicioLogger);
 
 
 

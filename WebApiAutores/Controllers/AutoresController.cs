@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using WebApiAutores;
 using WebApiAutores.Entidades;
 using WebApiAutores.Servicios;
+using WebAPIAutores.Filtros;
 
 namespace WebAPIAutores.Controllers
 {
@@ -25,7 +26,7 @@ namespace WebAPIAutores.Controllers
 
         [HttpGet("GUID")]
         //[ResponseCache(Duration = 10)]
-        //[ServiceFilter(typeof(MiFiltroDeAccion))]
+        [ServiceFilter(typeof(MiFiltroDeAccion))]
         public ActionResult ObtenerGuids()
         {
             return Ok();
